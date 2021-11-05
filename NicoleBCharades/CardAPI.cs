@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace NicoleBCharades
 {
+    [EnableCors("My Policy")]
     [Route("api/CardController")]
     [ApiController]
     public class CardAPI : ControllerBase

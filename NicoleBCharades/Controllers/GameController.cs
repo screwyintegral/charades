@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using NicoleBCharades.Data;
 using NicoleBCharades.Models;
 
 namespace NicoleBCharades.Controllers
 {
+    [EnableCors("My Policy")]
     public class GameController : Controller
     {
         private readonly ApplicationDbContext _context;

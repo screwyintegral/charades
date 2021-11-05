@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Logging;
 using NicoleBCharades.Models;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace NicoleBCharades.Controllers
 {
+    [EnableCors("My Policy")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
