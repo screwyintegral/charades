@@ -34,6 +34,18 @@ namespace NicoleBCharades
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // https://www.yogihosting.com/
+            // ASP.NET set up Cors in Startup.cs
+            services.AddCors(options =>
+                { options.AddPolicy("My Policy", builder =>
+                    {
+                        builder
+                          .AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                    });
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +70,9 @@ namespace NicoleBCharades
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseCors();
+            // https://www.yogihosting.com/
+            // ASP.NET enable Cors in Startup.cs
+            app.UseCors("My Policy");
 
             app.UseEndpoints(endpoints =>
             {

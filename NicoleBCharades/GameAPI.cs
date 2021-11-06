@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace NicoleBCharades
 {
+    // https://www.yogihosting.com/
+    // ASP.NET Enable Cors
     [EnableCors("My Policy")]
     [Route("api/GameController")]
     [ApiController]
